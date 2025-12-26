@@ -23,6 +23,8 @@ export function useStep(totalSteps: number) {
     if (step >= 0 && step < totalSteps) {
       setCurrentStep(step);
       localStorage.setItem(STORAGE_KEY, step.toString());
+      // Scroll to top on step change
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
   };
 

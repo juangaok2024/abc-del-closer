@@ -81,14 +81,12 @@ export default function Home() {
             <div className={`${isCTA ? 'mt-10' : 'mt-8'}`}>
               {isCTA && step.content.type === 'cta' ? (
                 <div className="space-y-6">
-                  <div className="pulse-glow rounded-xl">
-                    <ContinueButton
-                      onClick={() => {}}
-                      text={step.content.buttonText}
-                      isExternal
-                      href={CALENDAR_URL}
-                    />
-                  </div>
+                  <ContinueButton
+                    onClick={() => {}}
+                    text={step.content.buttonText}
+                    isExternal
+                    href={CALENDAR_URL}
+                  />
                   <p className="text-center text-[#808080] text-sm">
                     {step.content.subtext}
                   </p>

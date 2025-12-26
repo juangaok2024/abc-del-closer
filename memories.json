@@ -1,0 +1,76 @@
+{
+  "memories": [
+    {
+      "id": "mem_1766783863746_01b10b1tb",
+      "content": "PRD: ABC del Closer - Landing Interactiva para Tino Mossu (@tino.mossu, 278K seguidores). \n\nOBJETIVO: Reemplazar PDF lead magnet por experiencia web interactiva tipo micro-curso que eduque sobre Closers y termine en CTA para agendar llamada.\n\nTECH STACK: Next.js 14+ (App Router), Supabase, Tailwind CSS, TypeScript, Vercel\n\nESTRUCTURA: 6 pasos (Intro + 5 secciones + CTA Final)\n- Paso 0: Intro/Hook\n- Paso 1: ¿Qué es un Closer?\n- Paso 2: ¿Cuánto gana?\n- Paso 3: 3 Habilidades clave\n- Paso 4: Un día en la vida\n- Paso 5: Cómo empezar\n- Paso 6: CTA Final\n\nDISEÑO: Mobile-first, fondo oscuro #0a0a0a, dorado #C9A227, max-width 480px\n\nMÉTRICAS: Tasa completado >50%, Tasa agenda >15%",
+      "type": "general",
+      "tags": [
+        "general",
+        "typescript",
+        "proyecto",
+        "leadmagnet",
+        "prd",
+        "closer",
+        "tino-mossu"
+      ],
+      "timestamp": "2025-12-26T21:17:43.746Z",
+      "accessCount": 0,
+      "lastAccessed": "2025-12-26T21:17:43.746Z",
+      "lastVerified": "2025-12-26T21:17:43.746Z",
+      "status": "fresh"
+    },
+    {
+      "id": "mem_1766783953205_mw0t39cbl",
+      "content": "CONTENIDO VALIDADO - ABC del Closer:\n\nPASO 0 - INTRO: \"El trabajo remoto mejor pagado que casi nadie conoce en Latinoamérica\" + \"En los próximos 5 minutos vas a descubrir cómo ganar en dólares desde tu casa, sin inglés y sin título\"\n\nPASO 1 - QUÉ ES: Closer cierra ventas de alto valor, no llama en frío, recibe interesados. Quote: \"El Closer no convence. El Closer ayuda a tomar la decisión.\"\n\nPASO 2 - CUÁNTO GANA: 10-20% comisión. Rangos: Principiante $800-1500, Intermedio $2000-4000, Avanzado $5000-10000+\n\nPASO 3 - HABILIDADES: 1) Escucha activa, 2) Manejo objeciones, 3) Control emocional. Quote: \"Ninguna requiere talento natural.\"\n\nPASO 4 - UN DÍA: Timeline mañana→llamadas→libre. Lista de lo que NO hace (buscar clientes, publicidad, cobros, reclamos)\n\nPASO 5 - CÓMO EMPEZAR: Camino tradicional vs inteligente. Requisitos: PC/celular, lugar tranquilo, 4-6h/día, ganas.\n\nPASO 6 - CTA: Llamada diagnóstico gratuita 15-20 min. \"Sin compromiso. Si no es para vos, te lo decimos.\"",
+      "type": "general",
+      "tags": [
+        "general",
+        "contenido",
+        "validado",
+        "closer",
+        "pasos"
+      ],
+      "timestamp": "2025-12-26T21:19:13.205Z",
+      "accessCount": 0,
+      "lastAccessed": "2025-12-26T21:19:13.205Z",
+      "lastVerified": "2025-12-26T21:19:13.205Z",
+      "status": "fresh"
+    },
+    {
+      "id": "mem_1766784352936_sf4umkdtr",
+      "content": "MVP ABC del Closer COMPLETADO (sin database):\n\nURL local: http://localhost:3000\n\nESTRUCTURA FINAL:\n- src/app/page.tsx - Página principal con stepper\n- src/app/layout.tsx - Layout con metadata SEO\n- src/app/globals.css - Estilos y animaciones\n- src/components/ProgressBar.tsx - Barra de progreso sticky\n- src/components/ContinueButton.tsx - Botón de continuar/CTA\n- src/components/BackButton.tsx - Botón para volver\n- src/components/HighlightBox.tsx - Box para quotes\n- src/components/StepContent.tsx - Renderiza contenido de cada paso\n- src/content/steps.ts - Todo el contenido de los 7 pasos\n- src/hooks/useStep.ts - Hook con localStorage para persistencia\n- .env.local - URL del calendario (NEXT_PUBLIC_CALENDAR_URL)\n\nFEATURES:\n- 7 pasos (0-6) con contenido validado\n- Progress bar sticky con porcentaje\n- Animación fadeIn entre pasos\n- Persistencia en localStorage\n- Mobile-first (max-width 480px)\n- Colores: fondo #0a0a0a, dorado #C9A227",
+      "type": "config",
+      "tags": [
+        "config",
+        "database",
+        "mvp",
+        "completado",
+        "closer",
+        "estructura"
+      ],
+      "timestamp": "2025-12-26T21:25:52.936Z",
+      "accessCount": 0,
+      "lastAccessed": "2025-12-26T21:25:52.936Z",
+      "lastVerified": "2025-12-26T21:25:52.936Z",
+      "status": "fresh"
+    },
+    {
+      "id": "mem_1766785249499_amt6e4olj",
+      "content": "DISEÑO PREMIUM IMPLEMENTADO - ABC del Closer:\n\nTIPOGRAFÍA:\n- Playfair Display (headlines) - elegante serif\n- DM Sans (body) - moderno y legible\n\nCOLORES:\n- Background: #0a0a0a\n- Accent: #C9A227 (dorado)\n- Accent light: #e3c565\n- Accent dark: #9a7a1a\n- Glow: rgba(201, 162, 39, 0.15)\n\nMICROINTERACCIONES:\n- Progress bar con shimmer animado y glow\n- Botones con gradient shift, shine effect, press feedback\n- Cards glassmorphism con hover elevate\n- Animaciones staggered en contenido\n- Timeline dots con glow expansion\n- Back button con translate animation\n\nCLASES CSS CUSTOM:\n- .glass-card - glassmorphism con hover\n- .gold-text - gradient text dorado\n- .btn-premium - botón con shine effect\n- .quote-box - citas con big quote mark\n- .timeline-dot - dots con glow ring\n- .number-badge - badges numerados\n- .shimmer - efecto shimmer animado\n- .pulse-glow - glow pulsante\n- .stagger-children - animación secuencial\n- .animate-fadeInUp - fade con slide",
+      "type": "general",
+      "tags": [
+        "general",
+        "diseno",
+        "css",
+        "premium",
+        "animaciones"
+      ],
+      "timestamp": "2025-12-26T21:40:49.499Z",
+      "accessCount": 0,
+      "lastAccessed": "2025-12-26T21:40:49.499Z",
+      "lastVerified": "2025-12-26T21:40:49.499Z",
+      "status": "fresh"
+    }
+  ],
+  "lastUpdated": "2025-12-26T21:40:49.499Z"
+}

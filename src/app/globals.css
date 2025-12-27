@@ -331,3 +331,466 @@ body::before {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+/* ========== SCROLL EXPERIENCE ========== */
+
+/* Scroll container - GSAP Observer handles navigation */
+.scroll-container {
+  height: 100vh;
+  height: 100svh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scroll section - each section fills the viewport */
+.scroll-section {
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Swipe indicator */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.swipe-indicator {
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+/* GSAP animation helpers */
+.gsap-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.gsap-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Section content wrapper */
+.section-content {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation dots */
+.nav-dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 50;
+}
+
+@media (min-width: 768px) {
+  .nav-dots {
+    display: flex;
+  }
+}
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-dot.active {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--glow);
+}
+
+.nav-dot:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Hide scrollbar but keep functionality */
+.scroll-container::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ========== ENHANCED ANIMATIONS ========== */
+
+/* Shimmer gradient for progress bar */
+@keyframes shimmerGradient {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Subtle pulse for gold elements */
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+/* Hover lift effect for cards */
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(201, 162, 39, 0.1);
+}
+
+/* Skill card hover */
+.skill-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.skill-card:hover .skill-title {
+  text-shadow: 0 0 20px rgba(201, 162, 39, 0.5);
+}
+
+.skill-card:hover .number-badge {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.4);
+}
+
+/* Timeline enhancements */
+.timeline-item {
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.6);
+}
+
+.timeline-item:hover .timeline-time {
+  letter-spacing: 0.15em;
+}
+
+.timeline-line {
+  transition: all 0.5s ease;
+}
+
+/* Earnings row animation */
+.earnings-row {
+  transition: all 0.3s ease;
+}
+
+.earnings-row:hover {
+  background: rgba(201, 162, 39, 0.05);
+  padding-left: 8px;
+  margin-left: -8px;
+  margin-right: -8px;
+  padding-right: 8px;
+  border-radius: 8px;
+}
+
+.earnings-value {
+  transition: all 0.3s ease;
+}
+
+.earnings-row:hover .earnings-value {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(201, 162, 39, 0.5);
+}
+
+/* Path cards */
+.path-card {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.path-card:hover {
+  border-left-width: 6px;
+}
+
+.path-card:hover .path-name {
+  letter-spacing: 0.02em;
+}
+
+/* Requirement item */
+.requirement-item {
+  transition: all 0.3s ease;
+}
+
+.requirement-item .check-mark {
+  transition: all 0.3s ease;
+}
+
+.requirement-item:hover .check-mark {
+  transform: scale(1.2);
+  text-shadow: 0 0 10px rgba(201, 162, 39, 0.6);
+}
+
+/* Not-do items */
+.not-do-item {
+  transition: all 0.3s ease;
+}
+
+.not-do-item .not-do-x {
+  transition: all 0.3s ease;
+}
+
+.not-do-item:hover .not-do-x {
+  transform: scale(1.2);
+  color: rgba(248, 113, 113, 1);
+}
+
+/* Bullet point enhancements */
+.bullet-point {
+  transition: all 0.3s ease;
+}
+
+.bullet-dot {
+  transition: all 0.3s ease;
+}
+
+.bullet-point:hover .bullet-dot {
+  transform: scale(1.3);
+  text-shadow: 0 0 8px rgba(201, 162, 39, 0.6);
+}
+
+/* Quote box enhancements */
+.quote-box {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.quote-box:hover {
+  transform: scale(1.02);
+  border-left-width: 5px;
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.12) 0%, rgba(201, 162, 39, 0.04) 100%);
+}
+
+.quote-box::before {
+  transition: all 0.4s ease;
+}
+
+.quote-box:hover::before {
+  opacity: 0.5;
+  transform: scale(1.2);
+}
+
+.quote-text {
+  transition: all 0.3s ease;
+}
+
+.quote-box:hover .quote-text {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* CTA paragraph */
+.cta-paragraph {
+  transition: all 0.3s ease;
+}
+
+/* Number badge pulse */
+.number-badge {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.number-badge::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.glass-card:hover .number-badge::after {
+  opacity: 0.3;
+}
+
+/* Enhanced nav dots */
+.nav-dot {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav-dot.active {
+  width: 10px;
+  height: 10px;
+  box-shadow:
+    0 0 10px rgba(201, 162, 39, 0.6),
+    0 0 20px rgba(201, 162, 39, 0.3);
+}
+
+.nav-dot:hover:not(.active) {
+  transform: scale(1.5);
+  background: rgba(201, 162, 39, 0.5);
+}
+
+/* Floating particles */
+.floating-particle {
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Glass card 3D effect on hover */
+.glass-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Progress bar shine effect */
+@keyframes progressShine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* Text glow on hover */
+.gold-text {
+  transition: text-shadow 0.3s ease;
+}
+
+.glass-card:hover .gold-text {
+  text-shadow: 0 0 15px rgba(201, 162, 39, 0.4);
+}
+
+/* Smooth section transitions - start hidden to prevent flash */
+.section-headline {
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section-body {
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.section-cta {
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+/* Scroll hint indicator */
+@keyframes scrollHintBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.scroll-hint {
+  animation: scrollHintBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollHintGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.scroll-hint-glow {
+  animation: scrollHintGlow 2s ease-in-out infinite;
+}
+
+@keyframes scrollHintPulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.scroll-hint-text {
+  animation: scrollHintPulse 2s ease-in-out infinite;
+}
+
+/* Make the whole hint container interactive */
+.scroll-hint-container:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+/* Mobile touch feedback */
+@media (hover: none) {
+  .glass-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  .hover-lift:active {
+    transform: scale(0.98);
+  }
+
+  .bullet-point:active {
+    background: rgba(201, 162, 39, 0.1);
+    border-radius: 8px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .scroll-container {
+    scroll-behavior: auto;
+  }
+}

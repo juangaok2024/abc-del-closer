@@ -11,7 +11,7 @@ export function StepContent({ step }: StepContentProps) {
   const { content, quote } = step;
 
   return (
-    <div className="stagger-children">
+    <div className="space-y-6">
       {content.type === 'intro' && (
         <p className="text-xl text-[#a0a0a0] leading-relaxed">
           {content.subtext}
@@ -61,10 +61,7 @@ export function StepContent({ step }: StepContentProps) {
       {content.type === 'skills' && (
         <div className="space-y-4">
           {content.skills.map((skill, i) => (
-            <div
-              key={i}
-              className="glass-card p-5 group"
-            >
+            <div key={i} className="glass-card p-5">
               <h3 className="text-white font-semibold mb-4 flex items-center gap-3">
                 <span className="number-badge">{i + 1}</span>
                 <span className="gold-text">{skill.title}</span>

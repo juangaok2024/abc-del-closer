@@ -7,15 +7,29 @@ interface ContinueButtonProps {
   text?: string;
   isExternal?: boolean;
   href?: string;
+  onTrack?: (href: string) => void;
 }
 
-export function ContinueButton({ onClick, text = 'Continuar', isExternal, href }: ContinueButtonProps) {
+export function ContinueButton({ onClick, text = 'Continuar', isExternal, href, onTrack }: ContinueButtonProps) {
   const [isPressed, setIsPressed] = useState(false);
 
   const handleClick = () => {
     setIsPressed(true);
     setTimeout(() => setIsPressed(false), 150);
+
+    // Track button click before action
+    if (onTrack && href) {
+      onTrack(href);
+    }
+
     onClick();
+  };
+
+  const handleExternalClick = () => {
+    // Track button click for external links
+    if (onTrack && href) {
+      onTrack(href);
+    }
   };
 
   const baseClasses = `
@@ -38,6 +52,7 @@ export function ContinueButton({ onClick, text = 'Continuar', isExternal, href }
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={handleExternalClick}
         className={baseClasses}
       >
         {text}

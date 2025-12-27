@@ -99,7 +99,7 @@ export function Particles({
           transition: {
             duration: particle.duration,
             delay: particle.delay,
-            ease: [0.32, 0, 0.67, 0],
+            ease: [0.32, 0, 0.67, 0] as [number, number, number, number],
           },
         };
 
@@ -117,7 +117,7 @@ export function Particles({
           transition: {
             duration: particle.duration,
             delay: particle.delay,
-            ease: 'easeOut',
+            ease: 'easeOut' as const,
           },
         };
 
@@ -135,7 +135,7 @@ export function Particles({
           transition: {
             duration: particle.duration + 0.5,
             delay: particle.delay,
-            ease: [0.25, 0.1, 0.25, 1],
+            ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
           },
         };
 
